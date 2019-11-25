@@ -34,8 +34,8 @@ def navigate(row, col, direction, new_color, old_color):
                                 navigate(row, col + direction[1], direction, new_color, old_color)
                         elif grid[row + direction[1]][col] == new_color:
                                 # turn right then left
-                                direction[0] = "col"
-                                navigate(row, col + direction[1], direction, new_color, old_color)
+                                print("Current direction:", direction)
+                                navigate(row, col + (direction[1]*-1), direction, new_color, old_color)
                         else:
                                 # keep going in the same direction
                                 navigate(row + direction[1], col, direction, new_color, old_color)
@@ -46,14 +46,12 @@ def navigate(row, col, direction, new_color, old_color):
                                 navigate(row + direction[1], col, direction, new_color, old_color)
                         elif grid[row][col + direction[1]] == new_color:
                                 # turn right then left
-                                direction[0] = "row"
+                                print("Current direction:", direction)
                                 direction[1] = direction[1] * -1
-                                navigate(row + direction[1], col, direction, new_color, old_color)
+                                navigate(row + (direction[1]*-1), col, direction, new_color, old_color)
                         else:
                                 # keep going in the same direction
                                 navigate(row, col + direction[1], direction, new_color, old_color)
-
-                "do nothing"
 
         return
 
