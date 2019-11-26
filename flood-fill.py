@@ -13,7 +13,6 @@ grid = [
 
 
 def fill(row, col, new_color, old_color):
-        print("Checking grid[{}][{}]".format(row, col))
         directions = [(-1, 0),  # north
                       (1, 0),   # south
                       (0, 1),   # east
@@ -58,10 +57,6 @@ def main():
                         print("That entry is out of range. Please try again.")
                         continue
         new_color = input("And what color should we fill with?\n")
-
-        # new_color = "G"
-        # row = 7
-        # col = 3
 
         result = fill(row, col, new_color, old_color)
 
