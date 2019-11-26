@@ -4,7 +4,7 @@ grid = [
         ['R', 'R', 'Y', 'Y', 'Y', 'Y', 'Y', 'R', 'R'],
         ['R', 'R', 'Y', 'R', 'R', 'R', 'Y', 'R', 'R'],
         ['R', 'R', 'Y', 'R', 'R', 'R', 'Y', 'R', 'R'],
-        ['R', 'R', 'Y', 'R', 'R', 'R', 'Y', 'R', 'R'],
+        ['R', 'R', 'Y', 'R', 'R', 'R', 'R', 'R', 'R'],
         ['R', 'R', 'Y', 'R', 'R', 'R', 'Y', 'R', 'R'],
         ['R', 'R', 'Y', 'Y', 'Y', 'Y', 'Y', 'R', 'R'],
         ['R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R'],
@@ -13,14 +13,13 @@ grid = [
 
 
 def fill(row, col, new_color):
-        global grid
         old_color = grid[row][col]
         navigate(row, col, new_color, old_color)
         return grid
 
 
 def navigate(row, col, new_color, old_color):
-        global grid
+
         print("Checking grid[{}][{}]".format(row, col))
         directions = {"north": ["row", -1], "south": ["row", 1], "east": ["col", 1], "west": ["col", -1]}
         for direction in directions.values():
@@ -49,7 +48,6 @@ def navigate(row, col, new_color, old_color):
 
 
 def main():
-        global grid
         print("GRID:")
         pprint(grid)
 
